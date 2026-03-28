@@ -1,0 +1,214 @@
+---
+const featuredProduct = {
+  name: "The Better Conversations Deck",
+  price: "$29",
+  description:
+    "A guided digital card deck with 120 prompts to help couples talk deeper without making date night feel like homework.",
+  benefits: [
+    "5-minute and 20-minute modes for busy or relaxed nights",
+    "Built-in weekly check-in prompts to reduce emotional guesswork",
+    "Save favorite cards and revisit meaningful answers",
+  ],
+};
+
+const productPreviews = [
+  {
+    tag: "Tonight's prompt",
+    title: "What made you feel most appreciated this week?",
+    detail: "2 min reflection · tap to reveal follow-up question",
+  },
+  {
+    tag: "Date night mode",
+    title: "Pick a card category and answer in turns",
+    detail: "Conversation · Playful · Future plans · Repair",
+  },
+  {
+    tag: "Weekly check-in",
+    title: "How connected did we feel this week?",
+    detail: "Shared score + one small action for next week",
+  },
+];
+
+const testimonials = [
+  {
+    quote:
+      "We stopped defaulting to small talk. It feels like we have better conversations in less time.",
+    author: "A & J · dating for 2 years",
+  },
+  {
+    quote:
+      "It made our Sunday reset simple and calm. We actually look forward to our check-in now.",
+    author: "M & R · married",
+  },
+  {
+    quote:
+      "Perfect for nights when we want connection but don't want to plan a whole activity.",
+    author: "K & D · engaged",
+  },
+];
+
+const faqs = [
+  {
+    q: "Is this a physical product?",
+    a: "No. Love Alaoui products are fully digital and designed to be used on your phone, tablet, or laptop.",
+  },
+  {
+    q: "How do we access it after purchase?",
+    a: "You'll get instant access by email with a private link. Open it, save it to your home screen, and start right away.",
+  },
+  {
+    q: "Can we use it on our phones together?",
+    a: "Yes. It's mobile-first and made for couples to use side-by-side or remotely from two devices.",
+  },
+  {
+    q: "Is it good for date night?",
+    a: "Absolutely. Use Date Night mode for guided prompts that keep the conversation natural and intentional.",
+  },
+  {
+    q: "Is this suitable for married, engaged, or serious couples?",
+    a: "Yes. The tools are made for committed couples at different stages—dating, engaged, married, or building toward commitment.",
+  },
+];
+---
+
+<div class="space-y-12 py-8 md:space-y-16 md:py-10">
+  <section class="rounded-[2rem] bg-white/80 p-6 shadow-sm ring-1 ring-base-100 md:p-10">
+    <div class="space-y-6">
+      <p class="text-xs font-medium uppercase tracking-[0.22em] text-rose-700">Love Alaoui</p>
+      <h1 class="text-3xl font-semibold leading-tight text-base-900 md:text-5xl">
+        Better conversations for couples who want to feel close, even on busy weeks.
+      </h1>
+      <p class="max-w-xl text-sm leading-relaxed text-base-700 md:text-base">
+        Thoughtful digital tools for intentional relationships—conversation cards, weekly check-ins, and date-night prompts made to be used together on your phone.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <a
+          href="#featured-product"
+          class="inline-flex h-11 items-center justify-center rounded-full bg-base-900 px-6 text-sm font-medium text-white transition hover:bg-base-800"
+        >Shop the Deck</a>
+        <a
+          href="#how-it-works"
+          class="inline-flex h-11 items-center justify-center rounded-full border border-base-300 bg-base-50 px-6 text-sm font-medium text-base-900 transition hover:bg-base-100"
+        >See How It Works</a>
+      </div>
+    </div>
+
+    <div class="mt-8 rounded-3xl bg-gradient-to-br from-rose-100 via-rose-50 to-base-50 p-4 shadow-inner ring-1 ring-rose-100 md:mt-10 md:p-6">
+      <div class="mx-auto max-w-sm rounded-3xl bg-white p-4 shadow-sm ring-1 ring-base-100">
+        <p class="text-xs font-medium uppercase tracking-widest text-rose-600">Conversation Deck</p>
+        <p class="mt-3 rounded-2xl bg-base-50 p-4 text-sm text-base-800">
+          “What's one thing I did this week that made you feel loved?”
+        </p>
+        <div class="mt-3 flex items-center justify-between text-xs text-base-600">
+          <span>Card 34 of 120</span>
+          <span>Swipe for next →</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="featured-product" class="rounded-[2rem] bg-base-50 p-6 ring-1 ring-base-100 md:p-10">
+    <p class="text-xs font-medium uppercase tracking-[0.22em] text-rose-700">Featured product</p>
+    <div class="mt-3 space-y-4">
+      <h2 class="text-2xl font-semibold text-base-900 md:text-3xl">{featuredProduct.name}</h2>
+      <p class="text-sm leading-relaxed text-base-700 md:text-base">{featuredProduct.description}</p>
+      <ul class="space-y-2 text-sm text-base-800">
+        {featuredProduct.benefits.map((benefit) => <li>• {benefit}</li>)}
+      </ul>
+      <div class="flex items-center justify-between border-t border-base-200 pt-4">
+        <p class="text-xl font-semibold text-base-900">{featuredProduct.price}</p>
+        <a
+          href="#final-cta"
+          class="inline-flex h-10 items-center justify-center rounded-full bg-rose-700 px-5 text-sm font-medium text-white transition hover:bg-rose-800"
+        >Get Instant Access</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="how-it-works" class="space-y-4">
+    <h2 class="text-2xl font-semibold text-base-900">How it works</h2>
+    <div class="grid gap-3 md:grid-cols-3 md:gap-4">
+      {[
+        ["Discover", "Find a deck from TikTok, Instagram, or a friend and choose what fits your relationship rhythm."],
+        ["Buy", "Check out once and get immediate digital access—no shipping, no waiting, no clutter."],
+        ["Use together", "Open on your phones and start prompts in minutes, whether you're together or long distance."],
+      ].map(([title, desc], index) => (
+        <article class="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-base-100">
+          <p class="text-xs font-medium uppercase tracking-[0.2em] text-rose-700">Step {index + 1}</p>
+          <h3 class="mt-2 text-lg font-medium text-base-900">{title}</h3>
+          <p class="mt-2 text-sm leading-relaxed text-base-700">{desc}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="space-y-4 rounded-[2rem] bg-white p-6 shadow-sm ring-1 ring-base-100 md:p-8">
+    <h2 class="text-2xl font-semibold text-base-900">Why couples keep coming back</h2>
+    <div class="grid gap-3 md:grid-cols-3 md:gap-4">
+      {[
+        ["Easy to start", "No awkward setup. Open a prompt and begin in under a minute."],
+        ["Intentional, not intense", "Structured questions help you connect without turning every talk into a heavy conversation."],
+        ["Built for repeat use", "Use quick check-ins weekly and deeper cards for date nights or relationship resets."],
+      ].map(([title, desc]) => (
+        <article class="rounded-2xl bg-base-50 p-5 ring-1 ring-base-100">
+          <h3 class="text-base font-medium text-base-900">{title}</h3>
+          <p class="mt-2 text-sm leading-relaxed text-base-700">{desc}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="space-y-4">
+    <h2 class="text-2xl font-semibold text-base-900">Preview the experience</h2>
+    <p class="max-w-xl text-sm leading-relaxed text-base-700 md:text-base">
+      Designed to feel like a calm mini app: tap-friendly, beautifully spaced, and clear on small screens.
+    </p>
+    <div class="grid gap-3 md:grid-cols-3 md:gap-4">
+      {productPreviews.map((card) => (
+        <article class="rounded-3xl bg-gradient-to-b from-white to-rose-50 p-5 shadow-sm ring-1 ring-rose-100">
+          <p class="text-xs font-medium uppercase tracking-[0.2em] text-rose-700">{card.tag}</p>
+          <h3 class="mt-3 text-base font-medium text-base-900">{card.title}</h3>
+          <p class="mt-3 text-sm text-base-600">{card.detail}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="space-y-4 rounded-[2rem] bg-base-50 p-6 ring-1 ring-base-100 md:p-8">
+    <h2 class="text-2xl font-semibold text-base-900">Social proof</h2>
+    <div class="space-y-3">
+      {testimonials.map((item) => (
+        <blockquote class="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-base-100">
+          <p class="text-sm leading-relaxed text-base-800">“{item.quote}”</p>
+          <footer class="mt-3 text-xs uppercase tracking-[0.16em] text-base-500">{item.author}</footer>
+        </blockquote>
+      ))}
+    </div>
+  </section>
+
+  <section class="space-y-4">
+    <h2 class="text-2xl font-semibold text-base-900">FAQ</h2>
+    <div class="space-y-2">
+      {faqs.map((item) => (
+        <details class="rounded-2xl bg-white p-4 shadow-sm ring-1 ring-base-100">
+          <summary class="cursor-pointer list-none pr-6 text-sm font-medium text-base-900">{item.q}</summary>
+          <p class="mt-2 text-sm leading-relaxed text-base-700">{item.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section id="final-cta" class="rounded-[2rem] bg-base-900 px-6 py-10 text-center text-white md:px-10">
+    <p class="text-xs font-medium uppercase tracking-[0.22em] text-rose-200">Start today</p>
+    <h2 class="mx-auto mt-3 max-w-xl text-2xl font-semibold md:text-3xl">
+      Build closeness with small, meaningful moments each week.
+    </h2>
+    <p class="mx-auto mt-3 max-w-xl text-sm text-rose-100">
+      Get instant access to tools designed for better conversations, intentional quality time, and a stronger connection.
+    </p>
+    <a
+      href="#_"
+      class="mt-5 inline-flex h-11 items-center justify-center rounded-full bg-white px-6 text-sm font-medium text-base-900 transition hover:bg-base-100"
+    >Get the Better Conversations Deck</a>
+  </section>
+</div>
