@@ -9,6 +9,11 @@
     "preview": "astro preview",
     "astro": "astro"
   },
+  "dependencies": {
+    "@astrojs/cloudflare": "^12.6.2",
+    "@supabase/supabase-js": "^2.57.4",
+    "stripe": "^18.5.0"
+  },
   "devDependencies": {
     "@astrojs/sitemap": "^3.7.1",
     "@tailwindcss/vite": "^4.2.1",
