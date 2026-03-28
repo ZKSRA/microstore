@@ -1,12 +1,14 @@
 import { defineConfig } from 'astro/config';
+import cloudflare from '@astrojs/cloudflare';
 import tailwindcss from '@tailwindcss/vite';
+import sitemap from '@astrojs/sitemap';
 
-import sitemap from "@astrojs/sitemap";
 export default defineConfig({
+  adapter: cloudflare(),
+  output: 'server',
   vite: {
     plugins: [tailwindcss()],
   },
-  // Add your domain here
-   site: 'https://lexingtonthemes.com',
-  integrations: [ sitemap()]
+  site: 'https://lovealaoui.com',
+  integrations: [sitemap()],
 });

@@ -75,3 +75,50 @@ Whats new:
 - Full redesign
 - Ligth mode
 - New palette
+
+## Payments + Accounts setup (Stripe + Supabase)
+
+This project now includes a simple account + checkout flow:
+
+- Supabase email/password auth (`/signup`, `/login`, `/account`)
+- Protected `/my-deck` route
+- Stripe Checkout one-time payment via `/api/checkout`
+- Stripe webhook ingestion via `/api/stripe/webhook`
+
+### Required environment variables (Cloudflare-compatible names)
+
+Copy `.env.example` to `.env` and replace values.
+
+```bash
+PUBLIC_SITE_URL=https://your-domain.com
+PUBLIC_SUPABASE_URL=https://YOUR-PROJECT.supabase.co
+PUBLIC_SUPABASE_ANON_KEY=...
+SUPABASE_SERVICE_ROLE_KEY=...
+STRIPE_SECRET_KEY=...
+STRIPE_WEBHOOK_SECRET=...
+```
+
+### Supabase table (manual)
+
+Create a `purchases` table in Supabase with at least these columns:
+
+- `id` (uuid, primary key)
+- `user_id` (text or uuid)
+- `product_slug` (text)
+- `stripe_session_id` (text, unique)
+- `amount_total` (int)
+- `currency` (text)
+- `created_at` (timestamp, default now)
+
+Recommended unique constraint:
+
+- `(user_id, product_slug)`
+
+### Stripe webhook (manual)
+
+Add a Stripe webhook endpoint:
+
+- URL: `https://your-domain.com/api/stripe/webhook`
+- Event: `checkout.session.completed`
+
+> Note: webhook signature verification is left as a TODO in code and should be added before production.

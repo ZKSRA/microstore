@@ -1,0 +1,31 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+if (!Astro.locals.user) {
+  return Astro.redirect("/login?next=/account");
+}
+---
+
+<BaseLayout>
+  <section class="mx-auto max-w-2xl py-12">
+    <div class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-base-100 sm:p-8">
+      <h1 class="text-2xl font-semibold">Account</h1>
+      <dl class="mt-4 space-y-2 text-sm">
+        <div>
+          <dt class="text-base-500">Email</dt>
+          <dd class="font-medium text-base-900">{Astro.locals.user.email ?? "No email returned"}</dd>
+        </div>
+        <div>
+          <dt class="text-base-500">User ID</dt>
+          <dd class="break-all text-base-700">{Astro.locals.user.id}</dd>
+        </div>
+      </dl>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="/my-deck" class="inline-flex h-11 items-center justify-center rounded-full bg-base-900 px-5 text-sm font-medium text-white">Go to My Deck</a>
+        <form method="post" action="/api/auth/logout">
+          <button type="submit" class="inline-flex h-11 items-center justify-center rounded-full border border-base-300 px-5 text-sm font-medium text-base-900">Log out</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

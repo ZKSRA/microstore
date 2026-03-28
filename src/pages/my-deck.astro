@@ -1,0 +1,55 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { DEFAULT_PRODUCT } from "@/lib/products";
+import { hasPurchase } from "@/lib/supabase";
+import { hasServerCommerceConfig } from "@/lib/env";
+
+if (!Astro.locals.user) {
+  return Astro.redirect("/login?next=/my-deck");
+}
+
+let purchased = false;
+let serverConfigured = hasServerCommerceConfig;
+
+if (serverConfigured) {
+  try {
+    purchased = await hasPurchase(Astro.locals.user.id, DEFAULT_PRODUCT.slug);
+  } catch {
+    serverConfigured = false;
+  }
+}
+---
+
+<BaseLayout>
+  <section class="mx-auto max-w-3xl py-12">
+    <div class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-base-100 sm:p-8">
+      <h1 class="text-2xl font-semibold">My Deck</h1>
+      <p class="mt-2 text-sm text-base-600">Access purchased digital tools from this page.</p>
+
+      {
+        !serverConfigured ? (
+          <div class="mt-6 rounded-2xl border border-amber-300 bg-amber-50 p-4 text-sm text-amber-900">
+            Manual setup required: add `SUPABASE_SERVICE_ROLE_KEY` and `STRIPE_SECRET_KEY` to enable purchase validation.
+          </div>
+        ) : purchased ? (
+          <div class="mt-6 rounded-2xl border border-rose-200 bg-rose-50 p-5">
+            <h2 class="text-lg font-medium">{DEFAULT_PRODUCT.name}</h2>
+            <p class="mt-2 text-sm text-base-700">You're unlocked ✅. This is your protected content area.</p>
+            <div class="mt-4 rounded-xl bg-white p-4 text-sm ring-1 ring-base-200">
+              Placeholder: replace this block with the real deck viewer/app embed.
+            </div>
+          </div>
+        ) : (
+          <div class="mt-6 rounded-2xl border border-base-200 bg-base-50 p-5">
+            <h2 class="text-lg font-medium">You haven't purchased this deck yet.</h2>
+            <p class="mt-2 text-sm text-base-700">Complete checkout to unlock it instantly in this account.</p>
+            <form method="post" action="/api/checkout" class="mt-4">
+              <input type="hidden" name="productSlug" value={DEFAULT_PRODUCT.slug} />
+              <button type="submit" class="inline-flex h-11 items-center justify-center rounded-full bg-base-900 px-6 text-sm font-medium text-white">Buy {DEFAULT_PRODUCT.name} · $29</button>
+            </form>
+          </div>
+        )
+      }
+    </div>
+  </section>
+</BaseLayout>

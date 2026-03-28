@@ -1,0 +1,279 @@
+---
+const featuredProduct = {
+  name: "The Better Conversations Deck",
+  price: "$29",
+  description:
+    "A cozy digital card deck with 120 thoughtful prompts for check-ins, date nights, and everyday moments that help you feel closer.",
+  highlights: [
+    "120 guided prompts across playful + deeper categories",
+    "5-minute quick mode and longer date-night mode",
+    "Save favorites and build your own weekly ritual",
+  ],
+};
+
+const trustBadges = [
+  "Instant digital access",
+  "Mobile-first experience",
+  "Use together or long distance",
+];
+
+const howItWorks = [
+  {
+    title: "Discover",
+    desc: "Find a deck from TikTok, Instagram, or through a friend and pick the one that matches your relationship vibe.",
+  },
+  {
+    title: "Get access",
+    desc: "Complete checkout once and receive your private link instantly by email.",
+  },
+  {
+    title: "Use together",
+    desc: "Open it on your phones and answer in turns, whether you're on the couch or long distance.",
+  },
+];
+
+const benefits = [
+  {
+    title: "Gentle prompts",
+    desc: "Questions are thoughtful, clear, and natural—so the conversation flows without feeling forced.",
+  },
+  {
+    title: "Little rituals",
+    desc: "Use weekly check-ins to stay in sync and create simple habits that keep you connected.",
+  },
+  {
+    title: "Made to reuse",
+    desc: "Come back any time: busy weekdays, cozy nights in, or whenever you want to reconnect.",
+  },
+];
+
+const productPreviews = [
+  {
+    tag: "Tonight's card",
+    title: "What helped you feel supported by me this week?",
+    detail: "Tap for a warm follow-up and take turns answering.",
+  },
+  {
+    tag: "Date night",
+    title: "Choose a mood: playful, deeper, or future plans",
+    detail: "Pick a category and let the deck guide the flow.",
+  },
+  {
+    tag: "Weekly check-in",
+    title: "How connected did we feel from 1 to 10?",
+    detail: "Share one tiny action to make next week even better.",
+  },
+];
+
+const testimonials = [
+  {
+    quote:
+      "This made our evenings feel softer. We talk with more ease now, even after busy days.",
+    author: "A & J · dating for 2 years",
+  },
+  {
+    quote:
+      "It's cute, calm, and actually useful. Our Sunday check-in became our favorite ritual.",
+    author: "M & R · married",
+  },
+  {
+    quote:
+      "Perfect when we want quality time but don't want to overthink what to do.",
+    author: "K & D · engaged",
+  },
+];
+
+const faqs = [
+  {
+    q: "Is this a physical product?",
+    a: "Nope—everything is digital. You'll use it from your phone, tablet, or laptop.",
+  },
+  {
+    q: "How do we access it?",
+    a: "Right after checkout, you'll receive a private access link by email. Open it and start together.",
+  },
+  {
+    q: "Can we use it on our phones?",
+    a: "Yes. It's designed mobile-first, with tap-friendly cards and clear spacing for small screens.",
+  },
+  {
+    q: "Is it good for date night?",
+    a: "Absolutely. It's great for date nights, chill evenings in, or quick check-ins during the week.",
+  },
+  {
+    q: "Is it suitable for married / engaged / serious couples?",
+    a: "Yes. It's made for committed couples in different stages—serious dating, engaged, or married.",
+  },
+];
+---
+
+<div class="space-y-10 py-6 pb-24 sm:space-y-12 sm:py-8 sm:pb-10 lg:space-y-16 lg:py-10">
+  <section class="rounded-2xl border border-rose-200/70 bg-rose-50/80 px-4 py-3 text-center shadow-sm sm:px-6">
+    <p class="text-xs font-medium tracking-wide text-base-800">
+      New: <span class="text-rose-700">Weekend Connection Pack</span> now included with every deck
+    </p>
+  </section>
+
+  <section class="rounded-[2rem] bg-white/90 p-5 shadow-sm ring-1 ring-base-100 sm:p-7 lg:p-10">
+    <div class="grid items-center gap-6 lg:grid-cols-[1.08fr_.92fr] lg:gap-8">
+      <div class="space-y-5">
+        <p class="text-xs font-medium uppercase tracking-[0.22em] text-rose-700">Love Alaoui</p>
+        <h1 class="text-[clamp(2rem,7vw,3.5rem)] font-semibold leading-[1.05] text-base-900">
+          Feel closer this week with one tiny conversation ritual.
+        </h1>
+        <p class="max-w-xl text-[0.98rem] leading-relaxed text-base-700">
+          Cute, premium-feeling digital tools for couples—made to spark better conversations, deeper check-ins, and cozy quality time from your phone.
+        </p>
+
+        <div class="flex flex-wrap gap-3">
+          <a
+            href="#featured-product"
+            class="inline-flex h-11 items-center justify-center rounded-full bg-base-900 px-6 text-sm font-medium text-white transition hover:bg-base-800"
+          >Get the Deck</a>
+          <a
+            href="#preview"
+            class="inline-flex h-11 items-center justify-center rounded-full border border-base-300 bg-base-50 px-6 text-sm font-medium text-base-900 transition hover:bg-base-100"
+          >See a Preview</a>
+        </div>
+
+        <ul class="grid gap-2 text-xs text-base-700 sm:grid-cols-3 sm:gap-3">
+          {trustBadges.map((badge) => (
+            <li class="rounded-full bg-base-50 px-3 py-1.5 ring-1 ring-base-200">✓ {badge}</li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="rounded-3xl bg-gradient-to-br from-rose-100 via-rose-50 to-base-50 p-4 shadow-inner ring-1 ring-rose-100 sm:p-5">
+        <div class="mx-auto max-w-sm space-y-3 rounded-3xl bg-white p-4 shadow-sm ring-1 ring-base-100">
+          <p class="text-xs font-medium uppercase tracking-widest text-rose-600">Conversation Deck</p>
+          <p class="rounded-2xl bg-base-50 p-4 text-sm text-base-800">
+            “What's one small thing we could do this week to feel closer?”
+          </p>
+          <div class="flex items-center justify-between text-xs text-base-600">
+            <span>Card 34 of 120</span>
+            <span>Swipe for next →</span>
+          </div>
+          <div class="rounded-2xl bg-rose-50 px-3 py-2 text-xs text-rose-800 ring-1 ring-rose-100">
+            Includes mini check-in + date night prompts
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="featured-product" class="rounded-[2rem] bg-base-50 p-5 ring-1 ring-base-100 sm:p-7 lg:p-10">
+    <div class="flex flex-wrap items-start justify-between gap-4">
+      <div>
+        <p class="text-xs font-medium uppercase tracking-[0.22em] text-rose-700">Featured</p>
+        <h2 class="mt-2 text-[clamp(1.55rem,4vw,2.15rem)] font-semibold text-base-900">{featuredProduct.name}</h2>
+      </div>
+      <div class="rounded-2xl bg-white px-4 py-3 text-right ring-1 ring-base-200">
+        <p class="text-xs uppercase tracking-[0.16em] text-base-500">One-time payment</p>
+        <p class="text-2xl font-semibold text-base-900">{featuredProduct.price}</p>
+      </div>
+    </div>
+
+    <p class="mt-4 text-[0.98rem] leading-relaxed text-base-700">{featuredProduct.description}</p>
+
+    <ul class="mt-4 space-y-2 text-sm text-base-800">
+      {featuredProduct.highlights.map((item) => <li>• {item}</li>)}
+    </ul>
+
+    <div class="mt-5 grid gap-3 sm:grid-cols-2">
+      <a
+        href="#final-cta"
+        class="inline-flex h-11 items-center justify-center rounded-full bg-rose-700 px-5 text-sm font-medium text-white transition hover:bg-rose-800"
+      >Start Tonight</a>
+      <a
+        href="#faq"
+        class="inline-flex h-11 items-center justify-center rounded-full border border-base-300 bg-white px-5 text-sm font-medium text-base-900 transition hover:bg-base-50"
+      >Questions first?</a>
+    </div>
+  </section>
+
+  <section id="how-it-works" class="space-y-4">
+    <h2 class="text-[clamp(1.45rem,3.5vw,2rem)] font-semibold text-base-900">How it works</h2>
+    <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4">
+      {howItWorks.map((step, index) => (
+        <article class="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-base-100">
+          <p class="text-xs font-medium uppercase tracking-[0.2em] text-rose-700">Step {index + 1}</p>
+          <h3 class="mt-2 text-lg font-medium text-base-900">{step.title}</h3>
+          <p class="mt-2 text-sm leading-relaxed text-base-700">{step.desc}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="space-y-4 rounded-[2rem] bg-white p-5 shadow-sm ring-1 ring-base-100 sm:p-7 lg:p-8">
+    <h2 class="text-[clamp(1.45rem,3.5vw,2rem)] font-semibold text-base-900">Why couples love it</h2>
+    <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4">
+      {benefits.map((benefit) => (
+        <article class="rounded-2xl bg-base-50 p-5 ring-1 ring-base-100">
+          <h3 class="text-base font-medium text-base-900">{benefit.title}</h3>
+          <p class="mt-2 text-sm leading-relaxed text-base-700">{benefit.desc}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section id="preview" class="space-y-4">
+    <h2 class="text-[clamp(1.45rem,3.5vw,2rem)] font-semibold text-base-900">A peek inside</h2>
+    <p class="max-w-xl text-[0.98rem] leading-relaxed text-base-700">
+      Think of it like a tiny relationship app: calm layout, tap-friendly cards, and prompts you can actually reuse.
+    </p>
+    <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4">
+      {productPreviews.map((card) => (
+        <article class="rounded-3xl bg-gradient-to-b from-white to-rose-50 p-5 shadow-sm ring-1 ring-rose-100">
+          <p class="text-xs font-medium uppercase tracking-[0.2em] text-rose-700">{card.tag}</p>
+          <h3 class="mt-3 text-base font-medium text-base-900">{card.title}</h3>
+          <p class="mt-3 text-sm text-base-600">{card.detail}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="space-y-4 rounded-[2rem] bg-base-50 p-5 ring-1 ring-base-100 sm:p-7 lg:p-8">
+    <h2 class="text-[clamp(1.45rem,3.5vw,2rem)] font-semibold text-base-900">Loved by couples</h2>
+    <div class="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+      {testimonials.map((item) => (
+        <blockquote class="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-base-100">
+          <p class="text-sm leading-relaxed text-base-800">“{item.quote}”</p>
+          <footer class="mt-3 text-xs uppercase tracking-[0.16em] text-base-500">{item.author}</footer>
+        </blockquote>
+      ))}
+    </div>
+  </section>
+
+  <section id="faq" class="space-y-4">
+    <h2 class="text-[clamp(1.45rem,3.5vw,2rem)] font-semibold text-base-900">FAQ</h2>
+    <div class="space-y-2">
+      {faqs.map((item) => (
+        <details class="rounded-2xl bg-white p-4 shadow-sm ring-1 ring-base-100">
+          <summary class="cursor-pointer list-none pr-6 text-sm font-medium text-base-900">{item.q}</summary>
+          <p class="mt-2 text-sm leading-relaxed text-base-700">{item.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section id="final-cta" class="rounded-[2rem] bg-base-900 px-5 py-10 text-center text-white sm:px-7 lg:px-10">
+    <p class="text-xs font-medium uppercase tracking-[0.22em] text-rose-200">Ready for your next cozy check-in?</p>
+    <h2 class="mx-auto mt-3 max-w-xl text-[clamp(1.45rem,4vw,2.1rem)] font-semibold leading-tight">
+      Keep your relationship close with simple prompts you can come back to any time.
+    </h2>
+    <p class="mx-auto mt-3 max-w-xl text-sm text-rose-100">
+      Start with one deck, try it tonight, and build your own little ritual together.
+    </p>
+    <a
+      href="/signup?next=/my-deck"
+      class="mt-5 inline-flex h-11 items-center justify-center rounded-full bg-white px-6 text-sm font-medium text-base-900 transition hover:bg-base-100"
+    >Start With This Deck</a>
+  </section>
+</div>
+
+<div class="fixed inset-x-0 bottom-0 z-20 border-t border-base-200 bg-white/95 p-3 shadow-[0_-8px_24px_rgba(45,30,30,.06)] backdrop-blur sm:hidden">
+  <a
+    href="#final-cta"
+    class="inline-flex h-11 w-full items-center justify-center rounded-full bg-base-900 px-6 text-sm font-medium text-white"
+  >Get the Deck · $29</a>
+</div>
