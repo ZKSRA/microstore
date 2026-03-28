@@ -1,0 +1,33 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+if (Astro.locals.user) {
+  return Astro.redirect("/account");
+}
+
+const next = Astro.url.searchParams.get("next") ?? "/my-deck";
+const errorCode = Astro.url.searchParams.get("error");
+---
+
+<BaseLayout>
+  <section class="mx-auto max-w-md py-14">
+    <div class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-base-100 sm:p-8">
+      <h1 class="text-2xl font-semibold">Welcome back</h1>
+      <p class="mt-2 text-sm text-base-600">Log in to access your deck and purchases.</p>
+      {errorCode && <p class="mt-4 rounded-xl border border-rose-200 bg-rose-50 px-3 py-2 text-sm text-rose-700">We couldn't sign you in. Please check your details and try again.</p>}
+      <form method="post" action="/api/auth/login" class="mt-6 space-y-3">
+        <input type="hidden" name="next" value={next} />
+        <label class="block text-sm">
+          <span>Email</span>
+          <input name="email" type="email" required class="mt-1 w-full rounded-xl border border-base-300 bg-white px-3 py-2" />
+        </label>
+        <label class="block text-sm">
+          <span>Password</span>
+          <input name="password" type="password" required class="mt-1 w-full rounded-xl border border-base-300 bg-white px-3 py-2" />
+        </label>
+        <button type="submit" class="mt-2 inline-flex h-11 w-full items-center justify-center rounded-full bg-base-900 text-sm font-medium text-white">Log in</button>
+      </form>
+      <p class="mt-4 text-sm text-base-600">No account yet? <a class="underline" href="/signup">Create one</a></p>
+    </div>
+  </section>
+</BaseLayout>
