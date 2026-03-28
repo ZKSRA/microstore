@@ -87,6 +87,8 @@ This project now includes a simple account + checkout flow:
 
 ### Required environment variables (Cloudflare-compatible names)
 
+Copy `.env.example` to `.env` and replace values.
+
 ```bash
 PUBLIC_SITE_URL=https://your-domain.com
 PUBLIC_SUPABASE_URL=https://YOUR-PROJECT.supabase.co
